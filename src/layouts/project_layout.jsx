@@ -1,52 +1,42 @@
-import { projects } from "../../data/projects.jsx";
-import ProjectCard from "../components/project_card/project_card";
+import ProjectNavBar from "../components/project_navbar/project_navbar";
+import "./project_layout.css";
 
-export default function Project() {
-
-  const ongoing = projects.filter(p => p.status === "ongoing");
-  const finished = projects.filter(p => p.status === "finished");
-
+export default function ProjectLayout({ title, heroImage, meta, children }) {
   return (
-    <div className="projectPage">
+    <div className="project-page">
+      {heroImage && (
+        <div 
+          className="project-hero" 
+          style={{ backgroundImage: `url(${heroImage})` }} 
+        />
+      )}
 
-      <div className="projectHero">
-        <h1 className="heroTitle">Referensprojekt</h1>
-      </div>
+      <div className="project-layout">
+        <div className="project-inner">
 
-      <div className="projectContent">
+          <ProjectNavBar />
 
-        <h2 className="sectionTitle">Pågående Projekt</h2>
+          <article className="project-article fadeIn delay1">
 
-        <div className="projectGrid">
+            <div className="project-headerCard">
+              <h1 className="project-title">{title}</h1>
+              
+              {meta && (
+                <div className="project-meta">
+                  {meta.client && <div><strong>Kund:</strong> {meta.client}</div>}
+                  {meta.start && <div><strong>Start:</strong> {meta.start}</div>}
+                  {meta.end && <div><strong>Slut:</strong> {meta.end}</div>}
+                  {meta.investering && <div><strong>Investering:</strong> {meta.investering}</div>}
+                </div>
+              )}
+            </div>
+            <div className="project-content fadeIn delay2">
+              {children}
+            </div>
 
-          {ongoing.map(p => (
-            <ProjectCard
-              key={p.id}
-              image={p.image}
-              title={p.title}
-              description="Projektbeskrivning..."
-              link={p.path}
-            />
-          ))}
-
-        </div>
-
-        <h2 className="sectionTitle">Slutförda Projekt</h2>
-
-        <div className="projectGrid">
-
-          {finished.map(p => (
-            <ProjectCard
-              key={p.id}
-              image={p.image}
-              title={p.title}
-              description="Projektbeskrivning..."
-              link={p.path}
-            />
-          ))}
+          </article>
 
         </div>
-
       </div>
     </div>
   );

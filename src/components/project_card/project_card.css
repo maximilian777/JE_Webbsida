@@ -7,12 +7,12 @@
   text-decoration: none;
   color: black;
   font-family: "Montserrat", sans-serif;
-
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 8px;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
@@ -29,13 +29,17 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: white;
-  transform: translateY(40%);
-  transition: transform 0.35s ease;
+  background: rgba(255, 255, 255, 0.95); 
+  transform: translateY(calc(100% - 45px)); 
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-card:hover .content {
+  transform: translateY(0);
 }
 
 .divider {
-  height: 3px;
+  height: 4px;
   width: 100%;
   background: teal;
   margin: 0;
@@ -43,29 +47,18 @@
 
 .text-wrapper {
   padding: 12px 16px;
+  box-sizing: border-box;
 }
 
 .title {
-  margin: 0;
-  font-size: 18px;
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .description {
-  margin-top: 8px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-card:hover .content {
-  transform: translateY(0);
-}
-
-.project-card:hover .description {
-  opacity: 1;
-}
-
-.contact {
-  min-height: 100vh;
-  background: white;
-  overflow-x: hidden;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.4;
 }

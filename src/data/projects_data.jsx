@@ -9,6 +9,7 @@ export const projects = [
     title: "Stockholm Guide",
     status: "ongoing",
     image: stockholm,
+    description: "Stadsutveckling och analysprojekt i centrala Stockholm.",
     path: "/projects/stockholm",
   },
   {
@@ -16,6 +17,7 @@ export const projects = [
     title: "Solna Mall",
     status: "ongoing",
     image: solnaMall,
+    description: "Ombyggnation av handelsområde i Solna centrum.",
     path: "/projects/solna-mall",
   },
   {
@@ -23,6 +25,7 @@ export const projects = [
     title: "Solna Hotel Expansion",
     status: "finished",
     image: solnaHotel,
+    description: "Hotellutbyggnad med fokus på modern design och hållbarhet.",
     path: "/projects/solna-hotel",
   },
   {
@@ -30,6 +33,7 @@ export const projects = [
     title: "Centralen Development",
     status: "finished",
     image: centralen,
+    description: "Infrastrukturprojekt runt Stockholms centralstation.",
     path: "/projects/centralen",
-  },
+  }
 ];
