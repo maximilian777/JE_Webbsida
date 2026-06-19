@@ -45,4 +45,4 @@ export default function ProjectNavBar() {
       </div>
     </nav>
   );
-}c
+}
