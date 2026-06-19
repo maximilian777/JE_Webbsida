@@ -1,0 +1,61 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  height: 70px;
+
+  padding: 0 24px;
+  background: white;
+  color: black;
+
+  transition: box-shadow 0.2s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.links {
+  display: flex;
+  gap: 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+  height: 100%;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+  padding: 0 18px;
+
+  color: black;
+  text-decoration: none;
+
+  transition: background-color 0.2s ease;
+}
+
+.links a:hover {
+  background-color: teal;
+  color: white;
+}

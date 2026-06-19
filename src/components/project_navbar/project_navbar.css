@@ -1,0 +1,94 @@
+.projectNavBar {
+  width: 280px;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+
+  background: #0f6666;
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.projectSection {
+  margin: 0;
+}
+
+.projectHeader {
+  margin: 0;
+
+  cursor: pointer;
+
+  background-color: teal;
+  color: white;
+
+  padding: 14px 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  transition: background-color 0.2s ease;
+}
+
+.projectHeader:hover {
+  background-color: rgb(0, 83, 83);
+}
+
+.arrow {
+  font-size: 24px;
+
+  transition: transform 0.25s ease;
+}
+
+.arrow.open {
+  transform: rotate(90deg);
+}
+
+.projectList {
+  display: grid;
+  grid-template-rows: 1fr;
+
+  transition: grid-template-rows 0.2s ease-in-out;
+}
+
+.projectList.closed {
+  grid-template-rows: 0fr;
+}
+
+.projectListInner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectList a {
+  margin: 0;
+
+  background-color: rgb(39,39,39);
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 22px;
+
+  padding: 14px 0 14px 20px;
+
+  transform-origin: left center;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.projectList a:hover {
+  background-color: rgb(0, 83, 83);
+
+  transform: scale(1.03);
+
+  color: white;
+  text-decoration: none;
+}

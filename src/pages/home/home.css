@@ -1,0 +1,64 @@
+.home {
+  min-height: 100vh;
+
+  background-image: url("../../assets/images/stockholm.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+.home-hero {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-title {
+  font-size: 4rem;
+  margin: 0;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: fadeUp 1s ease forwards;
+}
+
+.home-button {
+  background: teal;
+  color: white;
+
+  padding: 12px 24px;
+  text-decoration: none;
+
+  font-size: 1.1rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.3s;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.home-button:hover {
+  background: #008080;
+  transform: scale(1.05);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
