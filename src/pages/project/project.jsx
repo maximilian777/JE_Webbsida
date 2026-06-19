@@ -1,12 +1,11 @@
 import "./project.css";
 import ProjectCard from "../../components/project_card/project_card";
-
-import stockholm from "../../assets/images/stockholm.jpg";
-import solnaMall from "../../assets/images/solnamall.jpg";
-import solnaHotel from "../../assets/images/solnahotel.jpg";
-import centralen from "../../assets/images/centralen.jpg";
+import { projects } from "../../data/projects_data.jsx";
 
 export default function Project() {
+  const ongoing = projects.filter(p => p.status === "ongoing");
+  const finished = projects.filter(p => p.status === "finished");
+
   return (
     <div className="projectPage">
       <div className="projectHero">
@@ -16,34 +15,28 @@ export default function Project() {
       <div className="projectContent">
         <h2 className="sectionTitle fadeIn delay1">Pågående Projekt</h2>
         <div className="projectGrid fadeIn delay2">
-          <ProjectCard
-            image={stockholm}
-            title="Stockholm Guide"
-            description="Stadsutveckling och analysprojekt i centrala Stockholm."
-            link="/projects/stockholm"
-          />
-          <ProjectCard
-            image={solnaMall}
-            title="Solna Mall Redevelopment"
-            description="Ombyggnation av handelsområde i Solna centrum."
-            link="/projects/solna-mall"
-          />
+          {ongoing.map(p => (
+            <ProjectCard
+              key={p.id}
+              image={p.image}
+              title={p.title}
+              description={p.description || "Projektbeskrivning..."}
+              link={p.path}
+            />
+          ))}
         </div>
 
-        <h2 className="sectionTitle fadeIn delay1">Slutförda Projekt</h2>
-        <div className="projectGrid fadeIn delay2">
-          <ProjectCard
-            image={solnaHotel}
-            title="Solna Hotel Expansion"
-            description="Hotellutbyggnad med fokus på modern design och hållbarhet."
-            link="/projects/solna-hotel"
-          />
-          <ProjectCard
-            image={centralen}
-            title="Centralen Development"
-            description="Infrastrukturprojekt runt Stockholms centralstation."
-            link="/projects/centralen"
-          />
+        <h2 className="sectionTitle fadeIn delay3">Slutförda Projekt</h2>
+        <div className="projectGrid fadeIn delay4">
+          {finished.map(p => (
+            <ProjectCard
+              key={p.id}
+              image={p.image}
+              title={p.title}
+              description={p.description || "Projektbeskrivning..."}
+              link={p.path}
+            />
+          ))}
         </div>
       </div>
     </div>

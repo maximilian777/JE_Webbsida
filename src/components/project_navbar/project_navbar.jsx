@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { projects } from "../../data/projects_data.jsx";
 import "./project_navbar.css";
 
 export default function ProjectNavBar() {
   const [ongoingOpen, setOngoingOpen] = useState(true);
   const [doneOpen, setDoneOpen] = useState(true);
+
+  const ongoing = projects.filter(p => p.status === "ongoing");
+  const finished = projects.filter(p => p.status === "finished");
 
   return (
     <nav className="projectNavBar">
@@ -15,8 +19,11 @@ export default function ProjectNavBar() {
         </div>
         <div className={`projectList ${ongoingOpen ? "" : "closed"}`}>
           <div className="projectListInner">
-            <Link to="/projects/stockholm">Stockholm Guide</Link>
-            <Link to="/projects/solna-mall">Solna Mall</Link>
+            {ongoing.map(project => (
+              <Link key={project.id} to={project.path}>
+                {project.title}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -28,11 +35,14 @@ export default function ProjectNavBar() {
         </div>
         <div className={`projectList ${doneOpen ? "" : "closed"}`}>
           <div className="projectListInner">
-            <Link to="/projects/solna-hotel">Solna Hotel Expansion</Link>
-            <Link to="/projects/centralen">Centralen Development</Link>
+            {finished.map(project => (
+              <Link key={project.id} to={project.path}>
+                {project.title}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
     </nav>
   );
-}
+}c

@@ -33,7 +33,6 @@ export const projects = [
     title: "Centralen Development",
     status: "finished",
     image: centralen,
-    description: "Infrastrukturprojekt runt Stockholms centralstation.",
     path: "/projects/centralen",
   }
 ];

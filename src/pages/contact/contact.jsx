@@ -9,7 +9,7 @@ export default function Contact() {
 
       <div className="contact-content">
 
-        <div className="contact-container">
+        <div className="contact-container fadeIn">
 
           <img
             className="contact-image"
@@ -19,18 +19,17 @@ export default function Contact() {
 
           <div className="contact-card">
 
-            <h2>John Doe</h2>
+            <h2>Jonnie E</h2>
 
-            <p className="contact-role">Frontend Developer</p>
+            <p className="contact-role">Roll</p>
 
             <p className="contact-description">
-              I am a developer focused on building clean and modern web
-              applications with React and modern UI systems.
+              Liten beskrivning
             </p>
 
             <div className="contact-details">
-              <p><strong>Phone:</strong> +46 070 123 456</p>
-              <p><strong>Email:</strong> john@example.com</p>
+              <p><strong>Phone:</strong> +46 70 888 88 88</p>
+              <p><strong>Email:</strong> jonnie@example.com</p>
             </div>
 
           </div>
